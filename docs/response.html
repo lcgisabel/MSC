@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Visualização e análise de campos receptivos do córtex visual
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+          <div class="logo-image-small">
+          </div>
+        </a>
+        <a href="#" class="simple-text logo-normal">
+          MSC
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+       		<ul class="nav">
+				<li>
+				  <a data-toggle="collapse" href="#pagesExamples">
+					  <i class="nc-icon nc-bookmark-2"></i>
+					  <p>Qualificação
+						 <b class="caret"></b>
+					  </p>
+				  </a>
+				  <div class="collapse" id="pagesExamples">
+					  <ul class="nav">
+						<li><a href="./attr.html">Atributos de Localização</a></li>
+						<li><a href="./index.html">Visualizações de Dados</a></li>
+						<li><a href="./visual.html">Exploração dos Dados</a></li>
+						<li><a href="./response.html">Mapa de Resposta</a></li>
+						<li><a href="./estimated.html">Resposta Estimada (Justaposição)</a></li>
+						<li><a href="./estimated2.html">Resposta Estimada (Sobreposição)</a></li>
+						<li><a href="./proximos.html">Próximos Passos</a></li>
+					  </ul>
+				  </div>
+			  </li>	
+			  <li>
+				  <a data-toggle="collapse" href="#pagesExamples2">
+					  <i class="nc-icon nc-bookmark-2"></i>
+					  <p>Próximos Passos
+						 <b class="caret"></b>
+					  </p>
+				  </a>
+				  <div class="collapse" id="pagesExamples2">
+					  <ul class="nav">
+						<li><a href="./attr.html">Multiplos Canais</a></li>
+					  </ul>
+				  </div>
+			  </li>	
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#"><center>Visualização e análise de campos receptivos do córtex visual<center></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-lg">
+
+  <canvas id="bigDashboardChart"></canvas>
+
+
+</div> -->
+      <div class="content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Mapa de Resposta Simulado 2D</h5>
+              </div>
+              <div class="card-body ">
+				<div><img src="img/response_map.jpg"></div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+					<a href="https://observablehq.com/@salesisabel/response-map-for-channel?collection=@salesisabel/qualificacao">Link Observable</a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="col-md-6">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Mapa de Resposta Simulado 3D</h5>
+              </div>
+              <div class="card-body">
+				<figure class="highcharts-figure">
+					<div id="map"></div>
+				</figure>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+				
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div class="row">
+          <div class="col-md-6">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Maior Taxa de Disparo por Orientação</h5>
+              </div>
+              <div class="card-body ">
+				  <figure class="highcharts-figure">
+					<div id=chartPreferences0></div>
+				  </figure>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                </div>
+              </div>
+            </div>
+          </div>
+		   <div class="col-md-6">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Formato do Campo Receptor</h5>
+              </div>
+              <div class="card-body ">
+				<div id="formatChannel"></div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+             
+            </nav>
+            <div class="credits ml-auto">
+              <span class="copyright">
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+	  <!-- HigthCharts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/dumbbell.js"></script>
+<script src="https://code.highcharts.com/modules/lollipop.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script>
+  
+  Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv', function(err, rows){
+function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+  var z_data = [];
+
+function fetchJSONFile(path, callback) {
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function() {
+    if (httpRequest.readyState === 4) {
+      if (httpRequest.status === 200) {
+        var data = JSON.parse(httpRequest.responseText);
+        if (callback) callback(data);
+      }
+    }
+  };
+  httpRequest.open('GET', path, false);
+  httpRequest.send();
+}
+
+fetchJSONFile("https://slesbel.github.io/datasets/response_map@13.json", function(data){
+  z_data = data;
+});
+
+var data = [{
+           z: z_data,
+           type: 'surface'
+        }];
+  
+var layout = {
+  title: ' ',
+  autosize: false,
+  width: 501,
+  height: 501,
+  margin: {
+    l: 50,
+    r: 50,
+    b: 50,
+    t: 50,
+  }
+};
+Plotly.newPlot('map', data, layout);
+});
+
+  
+	Highcharts.chart('formatChannel', {
+
+    chart: {
+        polar: true,
+        type: 'line'
+    },
+
+    pane: {
+        size: '80%'
+    },
+    
+        title: {
+        text: ''
+     },
+
+
+    xAxis: {
+        categories: ['0°', '45°', '90°', '135°', '180°', '225°', '270°', '315°'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+    },
+
+    yAxis: {
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0
+    },
+
+    tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+    },
+
+    legend: {
+        align: 'right',
+        verticalAlign: 'middle',
+        layout: 'vertical'
+    },
+
+    series: [{
+        name: 'Maior Taxa de Disparo',
+        data: [3, 4, 3, 3, 3, 3, 4, 3],
+        pointPlacement: 'on'
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 1
+            },
+            chartOptions: {
+                legend: {
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    layout: 'horizontal'
+                },
+                pane: {
+                    size: '70%'
+                }
+            }
+        }]
+    }
+
+});
+    
+	Highcharts.chart('chartPreferences0', {
+
+    chart: {
+        type: 'lollipop'
+    },
+
+
+    legend: {
+        enabled: true
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    title: {
+        text: ''
+    },
+
+    tooltip: {
+        shared: true
+    },
+
+    xAxis: {
+        type: 'category'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Maior Taxa de Disparo por Orientação'
+        }
+    },
+
+    series: [{
+        name: 'Maior Taxa de Disparo por Orientação',
+        data: [{
+            name: '0°',
+            low: 3
+        }, {
+            name: '45°',
+            low: 4
+        }, {
+            name: '90°',
+            low: 3
+        }, {
+            name: '135°',
+            low: 3
+        }, {
+            name: '180°',
+            low: 3
+        }, {
+            name: '225°',
+            low: 3
+        }, {
+            name: '270°',
+            low: 4
+        }, {
+            name: '315°',
+            low: 3
+        }]
+    }]
+
+});
+
+
+  </script>
+
+
+</body>
+
+</html>
