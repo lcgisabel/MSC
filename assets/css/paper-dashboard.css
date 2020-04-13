@@ -379,7 +379,7 @@ Copyright (c) 2015 Daniel Eden
 .navbar .navbar-nav>a.btn {
   border-width: 2px;
   font-weight: 600;
-  font-size: 0.8571em;
+  font-size: 8px;
   line-height: 1.35em;
   text-transform: uppercase;
   border: none;
@@ -548,7 +548,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
   min-width: 2.375rem;
   width: 2.375rem;
   padding: 0;
-  font-size: 0.9375rem;
+  font-size: 8px;
   overflow: hidden;
   position: relative;
   line-height: normal;
@@ -574,7 +574,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .navbar .navbar-nav>a.btn.btn-icon.btn-sm .far,
 .navbar .navbar-nav>a.btn.btn-icon.btn-sm .fas,
 .navbar .navbar-nav>a.btn.btn-icon.btn-sm .nc-icon {
-  font-size: 0.6875rem;
+  font-size: 6px;
 }
 
 .btn.btn-icon.btn-lg,
@@ -592,7 +592,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .navbar .navbar-nav>a.btn.btn-icon.btn-lg .far,
 .navbar .navbar-nav>a.btn.btn-icon.btn-lg .fas,
 .navbar .navbar-nav>a.btn.btn-icon.btn-lg .nc-icon {
-  font-size: 1.325rem;
+  font-size: 12px;
 }
 
 .btn.btn-icon:not(.btn-footer) .nc-icon,
@@ -1719,7 +1719,7 @@ fieldset[disabled] .btn-link.active {
 }
 
 .btn-sm {
-  font-size: 0.8571em;
+  font-size: 8px;
   border-radius: 3px;
   padding: 5px 15px;
 }
@@ -2257,7 +2257,7 @@ textarea.form-control {
 }
 
 .form-text {
-  font-size: 0.8571em;
+  font-size: 8px;
 }
 
 .form-control-lg {
@@ -2460,7 +2460,7 @@ a.text-gray:hover {
 
 .blockquote small {
   color: #66615B;
-  font-size: 0.8571em;
+  font-size: 8px;
   text-transform: uppercase;
 }
 
@@ -3352,7 +3352,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .dropdown-menu .dropdown-header {
   color: #9A9A9A;
-  font-size: 0.8571em;
+  font-size: 8px;
   padding: 10px 15px;
 }
 
@@ -5111,7 +5111,7 @@ License - nucleoapp.com/license/
 .footer ul li a {
   color: inherit;
   padding: 0.5rem;
-  font-size: 0.8571em;
+  font-size: 8px;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -5121,7 +5121,7 @@ License - nucleoapp.com/license/
 }
 
 .footer .copyright {
-  font-size: 0.8571em;
+  font-size: 8px;
   line-height: 1.8;
 }
 
@@ -5571,7 +5571,7 @@ License - nucleoapp.com/license/
 }
 
 .card label {
-  font-size: 0.8571em;
+  font-size: 8px;
   margin-bottom: 5px;
   color: #9A9A9A;
 }
