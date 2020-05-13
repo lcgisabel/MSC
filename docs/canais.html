@@ -31,11 +31,12 @@
 	}
 
   .direito {
-	background: #EFF2FB;
+	background: #fff;;
+
   }
   
   .esquerdo {
-	background: #EFF2FB;
+	background: #fff;
 	align-items: center;
   }
   
@@ -51,10 +52,19 @@
 	padding: 10px auto;
 }
 
+.ocultos {
+  *zoom: 1;
+  contain: content;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+}	
+
 .clearfix {
   *zoom: 1;
   contain: content;
-  background: #E0E6F8;
+  align-items: center;
+
 }	
 .clearfix:after {
   content: "";
@@ -275,6 +285,7 @@ h1{
 
 .posts{
    width: 800px;
+   background: #fff;
 
   div{
     font: 16px/250px Arial; 
@@ -284,6 +295,9 @@ h1{
     background: $mainColor;
     color: #fff; 
   }
+  
+ .canais{
+ }
   
 
 }
@@ -376,18 +390,371 @@ h1{
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Múltiplos canais</h5>
-              </div>
-              <div class="card-body ">
+        
+      
+			  
+			  <div class="gpItems row">
+				  <div class="ocultos col-md-12 border">
+						<nav>
+						  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+							<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Exibição</a>
+							<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Ferramentas</a>
+						  </div>
+						</nav>
+						<div class="tab-content" id="nav-tabContent">
+						  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+							<div class="row">
+								<div class="ocultos col-md-2 border">
+								<br/>
+								<b><p>Hemisfério</p></b>
+								<div class="toggles">
+								  <div class="form-check">
+									  <label class="form-check-label">
+										  <input class="form-check-input" name="esquerdo" type="checkbox" value="" id="esquerdo" checked>
+										  Esquerdo
+										  <span class="form-check-sign">
+											  <span class="check"></span>
+										  </span>
+									  </label>
+								  </div>
+									<div class="form-check">
+									  <label class="form-check-label">
+										  <input class="form-check-input" type="checkbox" value="" checked>
+										  Direito
+										  <span class="form-check-sign">
+											  <span class="check"></span>
+										  </span>
+									  </label>
+								  </div>
+								  </div>
+								</div>
+								<div class="ocultos col-md-3 border">
+								<br/>
+									<b><p>Banda</p></b>
+									<div class="col-md-12">
+									<div class="row">
+									<div class="col-md-6">
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" checked>
+											  Fina
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" checked>
+											  Grossa
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								   <div class="col-md-6">
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" checked>
+											  Inter banda 1
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" checked>
+											  Inter banda 2
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								  </div>
+								  </div>
+								</div>
+								<div class="ocultos col-md-1 border">
+									<br/>
+									<b><p>Matriz</p></b>
+									<div class="form-check">
+									  <label class="form-check-label">
+										  <input class="form-check-input" type="checkbox" value="" checked>
+										  4x8
+										  <span class="form-check-sign">
+											  <span class="check"></span>
+										  </span>
+									  </label>
+								  </div>
+									<div class="form-check">
+									  <label class="form-check-label">
+										  <input class="form-check-input" type="checkbox" value="" checked>
+										  2x16
+										  <span class="form-check-sign">
+											  <span class="check"></span>
+										  </span>
+									  </label>
+								  </div>
+
+								</div>
+								<div class="ocultos col-md-6 border">
+								<br/>
+								<b><p>Profundidade (µm)</p></b>
+									<div class="col-md-12">
+									<div class="row">
+									<div class="col-md-2">
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" checked>
+											  500
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  700
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  <div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  900
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								   <div class="col-md-2">
+
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" checked>
+											  1100
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  	<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  1300
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  1500
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								  	<div class="col-md-2">
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  1700
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  1800
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  	<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  1900
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								  <div class="col-md-2">
+
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  2100
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  	<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  2200
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  2300
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								  <div class="col-md-2">
+
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  2500
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  	<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  2600
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  3000
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								  <div class="col-md-2">
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="">
+											  3300
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								  </div>
+								  </div>
+								</div>
+							</div>
+						  </div>
+						  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+								<div class="row">
+									<div class="ocultos col-md-8 border">
+									<div class="row">
+										<div class="ocultos col-md-2"></div>
+										<div class="ocultos col-md-2">
+										  <button type="button" class="btn btn-primary lixeira" id="showall" >
+											<i class="nc-icon nc-refresh-69"></i>
+										  </button>
+										  <figcaption class="figure-caption">Exibir Todos os Canais</figcaption>
+										</div>
+										<div class="ocultos col-md-2">
+										  <button type="button" class="btn btn-primary excluir" >
+											<i class="nc-icon nc-simple-remove"></i>
+										  </button>
+										  <figcaption class="figure-caption">Ocultar Canais</figcaption>
+										</div>
+										<div class="ocultos col-md-2">
+										  <button type="button" class="btn btn-primary falta" id="showall" >
+											<i class="nc-icon nc-tile-56"></i>
+										  </button>
+										  <figcaption class="figure-caption">Visualização de Comparação</figcaption>
+										</div>
+										<div class="ocultos col-md-3">
+										  <button type="button" class="btn btn-primary falta" id="showall" >
+											<i class="nc-icon nc-simple-add"></i>
+										  </button>
+										  <figcaption class="figure-caption">Adicionar Notas</figcaption>
+										</div>
+										<div class="ocultos col-md-1"></div>
+									</div>
+									</div>
+									<div class="ocultos col-md-4 border">
+									<div class="row">
+										<div class="ocultos col-md-2"></div>
+										<div class="ocultos col-md-4">
+										  <button type="button" class="btn btn-primary falta" id="showall" >
+											<i class="nc-icon nc-single-copy-04"></i>
+										  </button>
+										  <figcaption class="figure-caption">Visualizar Notas</figcaption>
+										 </div>
+										 <div class="ocultos col-md-4">
+										  <button type="button" class="btn btn-primary falta" id="showall" >
+											<i class="nc-icon nc-paper"></i>
+										  </button>
+										  <figcaption class="figure-caption">Imprimir Notas</figcaption>
+										  </div>
+										  <div class="ocultos col-md-2"></div>
+									  </div>
+									</div>
+								</div>
+							 </div>
+						  </div>
+						</div>
+				  </div>
+	
+			  
 				<div class="gpItems row">
+				<div class="ocultos col-md-2 border">
+				<div class="row">
+					<div class="ocultos col-md-12 border">
+						<br/>
+						<center><h6>Canais Ocultos</h6></center>
+					</div>
+					<center>Em breve...</center>
+				</div>
+				</div>
 				<div class="posts col-md-10">
-				<div class=" row">
-				<div class="esquerdo col-md-6">
+				<div class="row">
+				<div class="ocultos col-md-8 ">
+				</div>
+				<div class="ocultos col-md-4 ">
+				  <div class="nav justify-content-end" id="nav-tab" role="tablist">
+					<a class=" nav-link active" id="nav-home-tab2" data-toggle="tab" href="#nav-home2" role="tab" aria-controls="nav-home2" aria-selected="true">Hemisfério</a>
+					<a class=" nav-link" id="nav-profile-tab2" data-toggle="tab" href="#nav-profile2" role="tab" aria-controls="nav-profile2" aria-selected="false">Matriz</a>
+				  </div>
+				</div>	
+				</div>
+				<div class="tab-content">
+				<div class="tab-pane fade show active" id="nav-home2" role="tabpanel" aria-labelledby="nav-home-tab2">
 				<br/>
-				<h6>Hemisfério Esquerdo (2x16)</h6>
-				<div class="bandas esquerdo fina post">
+				<h6>Hemisférios</h6>
+				<div class="row">
+				<div class="esquerdo col-md-6 border">
+				<br/>
+				<b><p>Esquerdo</p></b>
+				<div class="bandas esquerdo fina post border">
 				<p>Fina</p>
 				<ul class="gpItem">	
 				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
@@ -395,10 +762,12 @@ h1{
 				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>				
 				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
 				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
+				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>		
+				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
 				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>					  
 				</ul>
 				</div>
-				<div class="bandas esquerdo grossa post">
+				<div class="bandas esquerdo grossa post border">
 				<p>Grossa</p>
 				<ul class="gpItem">	
 				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
@@ -406,10 +775,12 @@ h1{
 				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>				
 				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
 				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>			  
+				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>	
+				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
+				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
 				</ul>
 				</div>
-				<div class="bandas esquerdo inter1 post">
+				<div class="bandas esquerdo inter1 post border">
 				<p>Inter-banda 1</p>
 				<ul class="gpItem">	
 				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
@@ -417,10 +788,12 @@ h1{
 				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>					
 				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
 				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>			  
+				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>	
+				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
+				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>				  
 				</ul>
 				</div>
-				<div class="bandas esquerdo inter2 post">
+				<div class="bandas esquerdo inter2 post border">
 				<p>Inter-banda 2</p>
 				<ul class="gpItem">	
 				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
@@ -428,15 +801,17 @@ h1{
 				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>					
 				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
 				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>			  
+				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>		
+				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
+				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>					  
 				</ul>
 				</div>
 				</div>
 				<br clear="all"/>
-				<div class="direito col-md-6">
+				<div class="direito col-md-6 border">
 				<br/>
-				<h6>Hemisfério Direito (2x16)</h6>
-				<div class="bandas direito fina post">
+				<b><p>Direito</p></b>
+				<div class="bandas direito fina post border">
 				<p>Fina</p>
 				<ul class="gpItem">	
 				  <li class="item fina direito post"><img src="img/response_map.jpg"><li>
@@ -444,10 +819,12 @@ h1{
 				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>						
 				  <li class="item fina direito post"><img src="img/response_map.jpg"><li>
 				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>			  
+				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>		
+				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>
+				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>					  
 				</ul>
 				</div>
-				<div class="bandas direito grossa post">
+				<div class="bandas direito grossa post border">
 				<p>Grossa</p>
 				<ul class="gpItem">	
 				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
@@ -455,10 +832,12 @@ h1{
 				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>					
 				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
 				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>			  
+				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>		
+				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
+				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>					  
 				</ul>
 				</div>
-				<div class="bandas direito inter1 post">
+				<div class="bandas direito inter1 post border">
 				<p>Inter-banda 1</p>
 				<ul class="gpItem">	
 				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
@@ -466,10 +845,12 @@ h1{
 				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>					
 				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
 				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>			  
+				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>	
+				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
+				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>				  
 				</ul>
 				</div>
-				<div class="bandas direito inter2 post">
+				<div class="bandas direito inter2 post border">
 				<p>Inter-banda 2</p>
 				<ul class="gpItem">	
 				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
@@ -477,13 +858,25 @@ h1{
 				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>					
 				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
 				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>			  
+				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>	
+				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
+				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>				  
 				</ul>
 				</div>
 				</div>
 				</div>
 				</div>
-				<div class="clearfix col-md-2">
+					
+					<div class="tab-pane fade" id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab2">
+						<div class="posts ocultos col-md-12">
+							<div class="row">
+								<div class="ocultos col-md-12 ">
+									Em breve...
+								</div>
+							</div>	
+						</div>	
+				</div>
+				<!--<div class="clearfix col-md-2">
 				<p class="titulo">Ferramentas:</p>
 				<div class="row">
 				  <button type="button" class="btn btn-primary lixeira" id="showall" >
@@ -503,13 +896,7 @@ h1{
 					  <button type="button" class="btn btn-info" id="inter1">Inter-banda 1</button>
 					  <button type="button" class="btn btn-info" id="inter2">Inter-banda 2</button>
 					</div>
-				</div>
-				</div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                </div>
+				</div> -->
               </div>
             </div>
           </div>
@@ -555,6 +942,7 @@ $('li').click(function () {
 
 });
 
+
 // all item selection
 $('.select').click(function () {
   if ($('li.selected').length == 0) {
@@ -584,6 +972,10 @@ $(".excluir").click(function(e){
 	$(".excluir").data('counter', 0);
 })
 
+$(".falta").click(function(e){
+	alert("Funcionalidade ainda não concluída!");
+});
+
 $(".lixeira").click(function(e){
 	 if ($('li.selected'))
     $('li.selected').removeClass('delete');
@@ -592,7 +984,7 @@ $(".lixeira").click(function(e){
 	$(".send").data('counter', 0);
 })
 
- $('.toggles button').click(function(){
+ $('.toggles checkbox').click(function(){
       var get_id = this.id;
       var get_current = $('.posts .' + get_id);
   
@@ -606,6 +998,7 @@ $(".lixeira").click(function(e){
 		$('li.selected').removeClass('selected');
 	$(".send").removeClass('selected');
     });
+	
 
 
   </script>
