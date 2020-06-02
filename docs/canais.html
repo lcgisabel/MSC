@@ -19,7 +19,14 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+  <!-- Tooltip -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 
   <style type="text/css">
@@ -42,14 +49,12 @@
   
  .bandas{
  	contain: content;
-	margin: 10px auto;
 	background: #fff;
  }
    
    
 .gpItems {
 	contain: content;
-	padding: 10px auto;
 }
 
 .ocultos {
@@ -59,6 +64,10 @@
   align-items: center;
   justify-content: center;
 }	
+
+.exibicao{
+	display: none;
+ }
 
 .clearfix {
   *zoom: 1;
@@ -87,12 +96,11 @@
 
 .gpItem {
   position: relative;
-  margin: 10px auto;
   list-style: none;
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 40px;
   color: #555;
 }
@@ -161,7 +169,7 @@ img {
   border-radius: 50px;
   color: #fff;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
   z-index: 10;
   opacity: 0;
   transition:         0.3s linear;
@@ -179,9 +187,17 @@ img {
   opacity: 1;
 }
 
+.canal{
+display: none;
+}
+
 .delete {
 display: none;
 }
+
+.item:hover img {
+  box-shadow: 0 0 0 4px #00c09e;
+ }
 
 /* img selection */
 
@@ -228,7 +244,7 @@ font-size: 8px;
 
 button.send {
   float: right;
-  background: #aaa;
+  background: fixed;
   padding: 0px 15px;
   transition:         0.3s linear;
   -o-transition:      0.3s linear;
@@ -284,20 +300,18 @@ h1{
 
 
 .posts{
-   width: 800px;
+
    background: #fff;
 
   div{
-    font: 16px/250px Arial; 
+    font: 12px/250px Arial; 
     float: left;
-    display: block;
     text-align: center;
     background: $mainColor;
     color: #fff; 
   }
   
- .canais{
- }
+
   
 
 }
@@ -324,41 +338,34 @@ h1{
       </div>
       <div class="sidebar-wrapper">
        		<ul class="nav">
-				<li>
-				  <a data-toggle="collapse" href="#pagesExamples">
-					  <i class="nc-icon nc-bookmark-2"></i>
-					  <p>Qualificação
-						 <b class="caret"></b>
-					  </p>
-				  </a>
-				  <div class="collapse" id="pagesExamples">
-					  <ul class="nav">
-						<li><a href="./attr.html">Atributos de Localização</a></li>
-						<li><a href="./index.html">Visualizações de Dados</a></li>
-						<li><a href="./visual.html">Exploração dos Dados</a></li>
-						<li><a href="./response.html">Mapa de Resposta</a></li>
-						<li><a href="./estimated.html">Resposta Estimada (Justaposição)</a></li>
-						<li><a href="./estimated2.html">Resposta Estimada (Sobreposição)</a></li>
-						<li><a href="./proximos.html">Próximos Passos</a></li>
-					  </ul>
-				  </div>
-			  </li>	
 			  <li>
-				  <a data-toggle="collapse" href="#pagesExamples2">
-					  <i class="nc-icon nc-bookmark-2"></i>
-					  <p>Próximos Passos
-						 <b class="caret"></b>
-					  </p>
-				  </a>
-				  <div class="collapse" id="pagesExamples2">
-					  <ul class="nav">
-						<li><a href="./canais.html">Multiplos Canais</a></li>
-					  </ul>
-				  </div>
+				  <ul class="nav">
+					<li><a href="./canais.html">Multiplos Canais</a></li>
+				  </ul>
 			  </li>	
         </ul>
       </div>
     </div>
+	<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
@@ -373,11 +380,6 @@ h1{
             </div>
             <a class="navbar-brand" href="#"><center>Visualização e análise de campos receptivos do córtex visual<center></a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
         </div>
       </nav>
       <!-- End Navbar -->
@@ -404,7 +406,7 @@ h1{
 						<div class="tab-content" id="nav-tabContent">
 						  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 							<div class="row">
-								<div class="ocultos col-md-2 border">
+								<div id="hemisferio" class="ocultos col-md-2 border ">
 								<br/>
 								<b><p>Hemisfério</p></b>
 								<div class="toggles">
@@ -419,7 +421,7 @@ h1{
 								  </div>
 									<div class="form-check">
 									  <label class="form-check-label">
-										  <input class="form-check-input" type="checkbox" value="" checked>
+										  <input class="form-check-input" type="checkbox" value="" id="direito" checked>
 										  Direito
 										  <span class="form-check-sign">
 											  <span class="check"></span>
@@ -428,60 +430,13 @@ h1{
 								  </div>
 								  </div>
 								</div>
-								<div class="ocultos col-md-3 border">
-								<br/>
-									<b><p>Banda</p></b>
-									<div class="col-md-12">
-									<div class="row">
-									<div class="col-md-6">
-										<div class="form-check">
-										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="" checked>
-											  Fina
-											  <span class="form-check-sign">
-												  <span class="check"></span>
-											  </span>
-										  </label>
-									  </div>
-										<div class="form-check">
-										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="" checked>
-											  Grossa
-											  <span class="form-check-sign">
-												  <span class="check"></span>
-											  </span>
-										  </label>
-									  </div>
-								  </div>
-								   <div class="col-md-6">
-										<div class="form-check">
-										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="" checked>
-											  Inter banda 1
-											  <span class="form-check-sign">
-												  <span class="check"></span>
-											  </span>
-										  </label>
-									  </div>
-										<div class="form-check">
-										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="" checked>
-											  Inter banda 2
-											  <span class="form-check-sign">
-												  <span class="check"></span>
-											  </span>
-										  </label>
-									  </div>
-								  </div>
-								  </div>
-								  </div>
-								</div>
-								<div class="ocultos col-md-1 border">
+								<div id="matriz" class="ocultos exibicao col-md-2 border">
 									<br/>
 									<b><p>Matriz</p></b>
+									<div class="toggles">
 									<div class="form-check">
 									  <label class="form-check-label">
-										  <input class="form-check-input" type="checkbox" value="" checked>
+										  <input class="form-check-input" type="checkbox" value="" id="m4x8" checked>
 										  4x8
 										  <span class="form-check-sign">
 											  <span class="check"></span>
@@ -490,16 +445,58 @@ h1{
 								  </div>
 									<div class="form-check">
 									  <label class="form-check-label">
-										  <input class="form-check-input" type="checkbox" value="" checked>
+										  <input class="form-check-input" type="checkbox" id="m2x16" value="" checked>
 										  2x16
 										  <span class="form-check-sign">
 											  <span class="check"></span>
 										  </span>
 									  </label>
 								  </div>
-
 								</div>
-								<div class="ocultos col-md-6 border">
+								</div>
+								<div class="ocultos col-md-2 border">
+								<br/>
+									<b><p>Banda</p></b>
+									<div class="col-md-12">
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="fina" checked>
+											  Fina
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="grossa" checked>
+											  Grossa
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="inter1" checked>
+											  Inter banda 1
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="inter2" checked>
+											  Inter banda 2
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+								  </div>
+								</div>
+								<div class="ocultos col-md-8 border">
 								<br/>
 								<b><p>Profundidade (µm)</p></b>
 									<div class="col-md-12">
@@ -507,7 +504,7 @@ h1{
 									<div class="col-md-2">
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="" checked>
+											  <input class="form-check-input" type="checkbox" value="" id="p500" checked>
 											  500
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -516,7 +513,7 @@ h1{
 									  </div>
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p700" checked>
 											  700
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -525,8 +522,17 @@ h1{
 									  </div>
 									  <div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p900" checked>
 											  900
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+										<div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="p1000" checked>
+											  1000
 											  <span class="form-check-sign">
 												  <span class="check"></span>
 											  </span>
@@ -537,7 +543,7 @@ h1{
 
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="" checked>
+											  <input class="form-check-input" type="checkbox" value="" id="p1100" checked>
 											  1100
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -546,7 +552,7 @@ h1{
 									  </div>
 									  	<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p1300" checked>
 											  1300
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -555,8 +561,17 @@ h1{
 									  </div>
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p1500" checked>
 											  1500
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  <div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="p1600" checked>
+											  1600
 											  <span class="form-check-sign">
 												  <span class="check"></span>
 											  </span>
@@ -566,7 +581,7 @@ h1{
 								  	<div class="col-md-2">
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p1700" checked>
 											  1700
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -575,7 +590,7 @@ h1{
 									  </div>
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p1800" checked>
 											  1800
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -584,8 +599,17 @@ h1{
 									  </div>
 									  	<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p1900" checked>
 											  1900
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  <div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="p2000" checked>
+											  2000
 											  <span class="form-check-sign">
 												  <span class="check"></span>
 											  </span>
@@ -596,7 +620,7 @@ h1{
 
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p2100" checked>
 											  2100
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -605,7 +629,7 @@ h1{
 									  </div>
 									  	<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p2200" checked>
 											  2200
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -614,8 +638,17 @@ h1{
 									  </div>
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p2300" checked>
 											  2300
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  <div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="p2400" checked>
+											  2400
 											  <span class="form-check-sign">
 												  <span class="check"></span>
 											  </span>
@@ -626,7 +659,7 @@ h1{
 
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p2500" checked>
 											  2500
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -635,7 +668,7 @@ h1{
 									  </div>
 									  	<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p2600" checked>
 											  2600
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -644,8 +677,17 @@ h1{
 									  </div>
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p3000" checked>
 											  3000
+											  <span class="form-check-sign">
+												  <span class="check"></span>
+											  </span>
+										  </label>
+									  </div>
+									  <div class="form-check">
+										  <label class="form-check-label">
+											  <input class="form-check-input" type="checkbox" value="" id="p3100" checked>
+											  3100
 											  <span class="form-check-sign">
 												  <span class="check"></span>
 											  </span>
@@ -655,7 +697,7 @@ h1{
 								  <div class="col-md-2">
 										<div class="form-check">
 										  <label class="form-check-label">
-											  <input class="form-check-input" type="checkbox" value="">
+											  <input class="form-check-input" type="checkbox" value="" id="p3300" checked>
 											  3300
 											  <span class="form-check-sign">
 												  <span class="check"></span>
@@ -670,46 +712,40 @@ h1{
 						  </div>
 						  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 								<div class="row">
-									<div class="ocultos col-md-8 border">
+									<div class="ocultos col-md-4 border">
 									<div class="row">
 										<div class="ocultos col-md-2"></div>
-										<div class="ocultos col-md-2">
+										<div class="ocultos col-md-4">
 										  <button type="button" class="btn btn-primary lixeira" id="showall" >
 											<i class="nc-icon nc-refresh-69"></i>
 										  </button>
 										  <figcaption class="figure-caption">Exibir Todos os Canais</figcaption>
 										</div>
-										<div class="ocultos col-md-2">
+										<div class="ocultos col-md-4">
 										  <button type="button" class="btn btn-primary excluir" >
 											<i class="nc-icon nc-simple-remove"></i>
 										  </button>
 										  <figcaption class="figure-caption">Ocultar Canais</figcaption>
 										</div>
-										<div class="ocultos col-md-2">
-										  <button type="button" class="btn btn-primary falta" id="showall" >
-											<i class="nc-icon nc-tile-56"></i>
-										  </button>
-										  <figcaption class="figure-caption">Visualização de Comparação</figcaption>
-										</div>
-										<div class="ocultos col-md-3">
+										<div class="ocultos col-md-2"></div>
+									</div>
+									</div>
+									<div class="ocultos col-md-6 border">
+									<div class="row">
+										<div class="ocultos col-md-1"></div>
+									    <div class="ocultos col-md-3">
 										  <button type="button" class="btn btn-primary falta" id="showall" >
 											<i class="nc-icon nc-simple-add"></i>
 										  </button>
 										  <figcaption class="figure-caption">Adicionar Notas</figcaption>
 										</div>
-										<div class="ocultos col-md-1"></div>
-									</div>
-									</div>
-									<div class="ocultos col-md-4 border">
-									<div class="row">
-										<div class="ocultos col-md-2"></div>
-										<div class="ocultos col-md-4">
+										<div class="ocultos col-md-3">
 										  <button type="button" class="btn btn-primary falta" id="showall" >
 											<i class="nc-icon nc-single-copy-04"></i>
 										  </button>
 										  <figcaption class="figure-caption">Visualizar Notas</figcaption>
 										 </div>
-										 <div class="ocultos col-md-4">
+										 <div class="ocultos col-md-3">
 										  <button type="button" class="btn btn-primary falta" id="showall" >
 											<i class="nc-icon nc-paper"></i>
 										  </button>
@@ -717,6 +753,18 @@ h1{
 										  </div>
 										  <div class="ocultos col-md-2"></div>
 									  </div>
+									</div>
+								   <div class="ocultos col-md-2 border">
+									<div class="row">
+										<div class="ocultos col-md-2"></div>
+										<div class="ocultos col-md-8">
+										  <button type="button" class="btn btn-primary falta" id="showall" >
+											<i class="nc-icon nc-tile-56"></i>
+										  </button>
+										  <figcaption class="figure-caption">Visualização de Comparação</figcaption>
+										</div>
+										<div class="ocultos col-md-2"></div>
+									</div>
 									</div>
 								</div>
 							 </div>
@@ -732,7 +780,22 @@ h1{
 						<br/>
 						<center><h6>Canais Ocultos</h6></center>
 					</div>
-					<center>Em breve...</center>
+					<div class="ocultos col-md-12 border canal" id="ce1">
+					<div class="row">
+						<div class="col-md-3">
+							<img src="img/response_map.jpg" class="img-fluid">
+						</div>
+						<div class="col-md-6">
+							<center><b>Canal 1</b></center>
+							<center>Esquerdo</center>
+							<center>4x8</center>
+						</div>
+						<div class="col-md-3 border">
+							<br/>
+							<i class="nc-icon nc-simple-remove"></i>
+						</div>
+					</div>
+					</div>
 				</div>
 				</div>
 				<div class="posts col-md-10">
@@ -749,132 +812,662 @@ h1{
 				<div class="tab-content">
 				<div class="tab-pane fade show active" id="nav-home2" role="tabpanel" aria-labelledby="nav-home-tab2">
 				<br/>
-				<h6>Hemisférios</h6>
+				<h6>Hemisfério</h6>
 				<div class="row">
-				<div class="esquerdo col-md-6 border">
+				<div id="divEsquerdo" class="esquerdo col-md-6 border">
 				<br/>
 				<b><p>Esquerdo</p></b>
 				<div class="bandas esquerdo fina post border">
 				<p>Fina</p>
 				<ul class="gpItem">	
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>				
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>		
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina esquerdo post"><img src="img/response_map.jpg"></li>					  
+				  <li class="item fina esquerdo post p500 m4x8 ce1 modalCanal" data-toggle="tooltip" data-html="true"
+				  title="<h6>Canal 1</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 500µm">
+					<img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="item fina esquerdo post p2100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 2</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item fina esquerdo post p2400 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 3</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2400µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item fina esquerdo post p1300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 4</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>		
+				  <li class="item fina esquerdo post p2300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 5</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item fina esquerdo post p1500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 6</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="item fina esquerdo post p1700 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 7</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item fina esquerdo post p2000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 8</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
 				</ul>
 				</div>
 				<div class="bandas esquerdo grossa post border">
 				<p>Grossa</p>
 				<ul class="gpItem">	
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>				
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>	
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa esquerdo post"><img src="img/response_map.jpg"></li>
+				  <li class="item grossa esquerdo post p3300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 9</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa esquerdo post p500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 10</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="item grossa esquerdo post p1100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 11</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa esquerdo post p2600 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 12</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 2600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa esquerdo post p1800 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 13</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1800µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
+				  <li class="item grossa esquerdo post p1300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 14</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa esquerdo post p900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 15</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>				
+				  <li class="item grossa esquerdo post p2100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 16</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 2100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
 				</ul>
 				</div>
 				<div class="bandas esquerdo inter1 post border">
 				<p>Inter-banda 1</p>
 				<ul class="gpItem">	
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>					
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>	
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 esquerdo post"><img src="img/response_map.jpg"></li>				  
+				  <li class="item inter1 esquerdo post p3000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 17</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 esquerdo post p3300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 18</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 esquerdo post p500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 19</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="item inter1 esquerdo post p2600 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 20</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 esquerdo post p1300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 21</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>				
+				  <li class="item inter1 esquerdo post p1100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 22</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 esquerdo post p700 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 23</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 esquerdo post p1900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 24</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
 				</ul>
 				</div>
 				<div class="bandas esquerdo inter2 post border">
 				<p>Inter-banda 2</p>
 				<ul class="gpItem">	
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>					
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>		
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 esquerdo post"><img src="img/response_map.jpg"></li>					  
+				  <li class="item inter2 esquerdo post p1000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 25</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>				
+				  <li class="item inter2 esquerdo post p1100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 26</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 esquerdo post p2500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 27</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 2500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="item inter2 esquerdo post p700 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 28</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 esquerdo post p3000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 29</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="item inter2 esquerdo post p900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 30</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 esquerdo post p1500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 31</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 esquerdo post p900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 32</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
 				</ul>
 				</div>
 				</div>
 				<br clear="all"/>
-				<div class="direito col-md-6 border">
+				<div id="divDireito" class="direito col-md-6 border">
 				<br/>
 				<b><p>Direito</p></b>
 				<div class="bandas direito fina post border">
 				<p>Fina</p>
 				<ul class="gpItem">	
-				  <li class="item fina direito post"><img src="img/response_map.jpg"><li>
-				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>						
-				  <li class="item fina direito post"><img src="img/response_map.jpg"><li>
-				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>		
-				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item fina direito post"><img src="img/response_map.jpg"></li>					  
+				  <li class="item fina direito post p1000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 1</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  <li>
+				  <li class="item fina direito post p2300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 2</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item fina direito post p1800 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 3</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1800µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>						
+				  <li class="item fina direito post p2100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 4</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>		
+				  <li class="item fina direito post p1700 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 5</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  <li>
+				  <li class="item fina direito post p1300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 6</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>						
+				  <li class="item fina direito post p1600 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 7</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item fina direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 8</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
 				</ul>
 				</div>
 				<div class="bandas direito grossa post border">
 				<p>Grossa</p>
 				<ul class="gpItem">	
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>					
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>		
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item grossa direito post"><img src="img/response_map.jpg"></li>					  
+				  <li class="item grossa direito post p2200 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 9</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 2200µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa direito post p3300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 10</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="item grossa direito post p3000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 11</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa direito post p700 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 12</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa direito post p900 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 13</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa direito post p1600 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 14</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item grossa direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 15</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="item grossa direito post p1300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 16</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>		  
 				</ul>
 				</div>
 				<div class="bandas direito inter1 post border">
 				<p>Inter-banda 1</p>
 				<ul class="gpItem">	
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>					
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>	
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter1 direito post"><img src="img/response_map.jpg"></li>				  
+				  <li class="item inter1 direito post p2200 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 17</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2200µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 direito post p2600 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 18</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="item inter1 direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 19</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
+				  <li class="item inter1 direito post p3000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 20</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 direito post p3300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 21</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="item inter1 direito post p2400 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 22</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2400µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 direito post p1900 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 23</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter1 direito post p1800 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 24</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1800µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
 				</ul>
 				</div>
 				<div class="bandas direito inter2 post border">
 				<p>Inter-banda 2</p>
 				<ul class="gpItem">	
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>					
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>	
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>
-				  <li class="item inter2 direito post"><img src="img/response_map.jpg"></li>				  
+				  <li class="item inter2 direito post p1000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 25</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="item inter2 direito post p1500 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 26</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 27</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 direito post p1300m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 28</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
+				  <li class="item inter2 direito post p3000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 29</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 direito post p700 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 30</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="item inter2 direito post p2000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 31</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 2000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="item inter2 direito post p1900 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 32</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
 				</ul>
 				</div>
 				</div>
 				</div>
 				</div>
 					
-					<div class="tab-pane fade" id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab2">
-						<div class="posts ocultos col-md-12">
-							<div class="row">
-								<div class="ocultos col-md-12 ">
-									Em breve...
-								</div>
-							</div>	
-						</div>	
+				<div class="tab-pane fade" id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab2">
+				<br/>
+				<h6>Matriz</h6>
+				<div class="row">
+				<div id="div4x8" class="m4x8 esquerdo col-md-12 border">
+				<br/>
+				<b><p>4x8</p></b>
+				<div class="row">
+				<div class="bandas esquerdo fina post border col-md-3">
+				<p>Fina</p>
+				<div class="gpItem row">
+				  <li class=" col-md-4 item fina esquerdo post p500 m4x8 ce1" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 1</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 500µm">
+					<img class="img-fluid" src="img/response_map.jpg">
+				  </li>			  
+				  <li class="col-md-4 item fina esquerdo post p2100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 2</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item fina esquerdo post p2400 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 3</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2400µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class=" col-md-4 item fina esquerdo post p1300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 4</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item fina esquerdo post p2300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 5</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-4 item fina esquerdo post p1500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 6</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>		
+				  </div>
+				   <div class="gpItem row">
+				  <li class="col-md-4 item fina esquerdo post p1700 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 7</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-4 item fina esquerdo post p2000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 8</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				</div>
+				<div class="bandas esquerdo grossa post border col-md-3">
+				<p>Grossa</p>
+				<div class="gpItem row">
+				  <li class="col-md-4 item grossa esquerdo post p3300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 9</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-4 item grossa esquerdo post p500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 10</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>		
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item grossa esquerdo post p1100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 11</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-4 item grossa esquerdo post p2600 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 12</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 2600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item grossa esquerdo post p1800 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 13</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1800µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
+				  <li class="col-md-4 item grossa esquerdo post p1300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 14</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item grossa esquerdo post p900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 15</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>				
+				  <li class="col-md-4 item grossa esquerdo post p2100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 16</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 2100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
+				</div>
+				</div>
+				<div class="bandas esquerdo inter1 post border col-md-3">
+				<p>Inter-banda 1</p>
+				<div class="gpItem row">
+				  <li class="col-md-4 item inter1 esquerdo post p3000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 17</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-4 item inter1 esquerdo post p3300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 18</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item inter1 esquerdo post p500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 19</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="col-md-4 item inter1 esquerdo post p2600 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 20</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item inter1 esquerdo post p1300 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 21</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>				
+				  <li class="col-md-4 item inter1 esquerdo post p1100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 22</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item inter1 esquerdo post p700 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 23</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-4 item inter1 esquerdo post p1900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 24</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
+				</div>
+				</div>
+				<div class="bandas esquerdo inter2 post border col-md-3">
+				<p>Inter-banda 2</p>
+				<div class="gpItem row">
+				  <li class="col-md-4 item inter2 esquerdo post p1000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 25</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>				
+				  <li class="col-md-4 item inter2 esquerdo post p1100 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 26</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item inter2 esquerdo post p2500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 27</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 2500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="col-md-4 item inter2 esquerdo post p700 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 28</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item inter2 esquerdo post p3000 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 29</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="col-md-4 item inter2 esquerdo post p900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 30</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-4 item inter2 esquerdo post p1500 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 31</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-4 item inter2 esquerdo post p900 m4x8" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 32</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
+				</div>
+				</div>
+				</div>
+				</div>
+				<br clear="all"/>
+				<div id="div2x16" class="m2x16 direito col-md-12 border">
+				<br/>
+				<b><p>2x16</p></b>
+				<div class="row">
+				<div class="bandas direito fina post border col-md-3">
+				<p>Fina</p>
+				<div class="gpItem row">
+				  <li class="col-md-1 item fina direito post p1000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 1</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  <li>
+				  <li class="col-md-1 item fina direito post p2300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 2</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item fina direito post p1800 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 3</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1800µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>						
+				  <li class="col-md-1 item fina direito post p2100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 4</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-1 item fina direito post p1700 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 5</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  <li>
+				  <li class="col-md-1 item fina direito post p1300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 6</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>						
+				  <li class="col-md-1 item fina direito post p1600 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 7</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item fina direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 8</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
+				</div>
+				</div>
+				<div class="bandas direito grossa post border col-md-3">
+				<p>Grossa</p>
+				<div class="gpItem row">
+				  <li class="col-md-1 item grossa direito post p2200 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 9</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 2200µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item grossa direito post p3300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 10</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="col-md-1 item grossa direito post p3000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 11</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item grossa direito post p700 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 12</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-1 item grossa direito post p900 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 13</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item grossa direito post p1600 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 14</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item grossa direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 15</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="col-md-1 item grossa direito post p1300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 16</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Grossa <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>		  
+				</div>
+				</div>
+				<div class="bandas direito inter1 post border col-md-3">
+				<p>Inter-banda 1</p>
+				<div class="gpItem row">
+				  <li class="col-md-1 item inter1 direito post p2200 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 17</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2200µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item inter1 direito post p2600 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 18</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2600µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="col-md-1 item inter1 direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 19</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
+				  <li class="col-md-1 item inter1 direito post p3000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 20</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-1 item inter1 direito post p3300 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 21</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 3300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					
+				  <li class="col-md-1 item inter1 direito post p2400 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 22</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 2400µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item inter1 direito post p1900 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 23</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item inter1 direito post p1800 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 24</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 1 <br/> <b>Profundidade:</b> 1800µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
+				</div>
+				</div>
+				<div class="bandas direito inter2 post border col-md-3">
+				<p>Inter-banda 2</p>
+				<div class="gpItem row">
+				  <li class="col-md-1 item inter2 direito post p1000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 25</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="col-md-1 item inter2 direito post p1500 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 26</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1500µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item inter2 direito post p1100 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 27</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1100µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item inter2 direito post p1300m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 28</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1300µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>	
+				  </div>
+				  <div class="gpItem row">
+				  <li class="col-md-1 item inter2 direito post p3000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 29</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 3000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item inter2 direito post p700 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 30</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 700µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>			
+				  <li class="col-md-1 item inter2 direito post p2000 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 31</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 2000µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>
+				  <li class="col-md-1 item inter2 direito post p1900 m2x16" data-toggle="tooltip" data-html="true" 
+				  title="<h6>Canal 32</h6> <b>Hemisfério:</b> Direito <br/> <b>Banda:</b> Inter-banda 2 <br/> <b>Profundidade:</b> 1900µm">
+				  <img class="img-fluid" src="img/response_map.jpg">
+				  </li>					  
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
 				</div>
 				<!--<div class="clearfix col-md-2">
 				<p class="titulo">Ferramentas:</p>
@@ -915,6 +1508,7 @@ h1{
           </div>
         </div>
       </footer>
+	  
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -933,6 +1527,25 @@ h1{
 
   <script>
 // item selection
+
+$(".modalCanal").click(function() {
+  //var url = $(this).find("img").attr("src");
+ // $("#exampleModalLong img").attr("src", url);
+  $("#exampleModalLong").modal("show");
+  console.log("teste");
+});
+
+
+$('#nav-profile-tab2').click(function () {
+	$('#hemisferio').addClass('exibicao');
+	$("#matriz").removeClass('exibicao');
+});
+
+$('#nav-home-tab2').click(function () {
+	$('#matriz').addClass('exibicao');
+	$("#hemisferio").removeClass('exibicao');
+});
+
 $('li').click(function () {
   $(this).toggleClass('selected');
   if ($('li.selected').length == 0)
@@ -984,21 +1597,251 @@ $(".lixeira").click(function(e){
 	$(".send").data('counter', 0);
 })
 
- $('.toggles checkbox').click(function(){
-      var get_id = this.id;
-      var get_current = $('.posts .' + get_id);
-  
-        $('.post').not( get_current ).hide(500);
-        get_current.show(500);
-    });
-    
-    
-    $('#showall').click(function() {
-        $('.post').show(500);
-		$('li.selected').removeClass('selected');
-	$(".send").removeClass('selected');
-    });
+$('#esquerdo').click(function() {
+	if (this.checked){
+		$('.esquerdo').removeClass('delete');
+		$('#divDireito').addClass('col-md-6');
+		$('#divDireito').removeClass('col-md-12');
+	}else{
+		$('.esquerdo').addClass('delete');
+		$('#divDireito').addClass('col-md-12');
+		$('#divDireito').removeClass('col-md-6');
+	}
+});
 	
+$('#direito').click(function() {
+	if (this.checked){
+		$('.direito').removeClass('delete');
+		$('#divEsquerdo').addClass('col-md-6');
+		$('#divEsquerdo').removeClass('col-md-12');
+	}else{
+		$('.direito').addClass('delete');
+		$('#divEsquerdo').addClass('col-md-12');
+		$('#divEsquerdo').removeClass('col-md-6');
+	}
+});
+
+$('#fina').click(function() {
+	if (this.checked){
+		$('.fina').removeClass('delete');
+	}else{
+		$('.fina').addClass('delete');
+	}
+});
+
+$('#grossa').click(function() {
+	if (this.checked){
+		$('.grossa').removeClass('delete');
+	}else{
+		$('.grossa').addClass('delete');
+	}
+});
+
+$('#inter1').click(function() {
+	if (this.checked){
+		$('.inter1').removeClass('delete');
+	}else{
+		$('.inter1').addClass('delete');
+	}
+});
+
+$('#inter2').click(function() {
+	if (this.checked){
+		$('.inter2').removeClass('delete');
+	}else{
+		$('.inter2').addClass('delete');
+	}
+});
+
+$('#m4x8').click(function() {
+	if (this.checked){
+		$('.m4x8').removeClass('delete');
+	}else{
+		$('.m4x8').addClass('delete');
+	}
+});
+
+$('#m2x16').click(function() {
+	if (this.checked){
+		$('.m2x16').removeClass('delete');
+	}else{
+		$('.m2x16').addClass('delete');
+	}
+});
+	
+$('#p500').click(function() {
+	if (this.checked){
+		$('.p500').removeClass('delete');
+	}else{
+		$('.p500').addClass('delete');
+	}
+});
+
+$('#p700').click(function() {
+	if (this.checked){
+		$('.p700').removeClass('delete');
+	}else{
+		$('.p700').addClass('delete');
+	}
+});
+
+$('#p900').click(function() {
+	if (this.checked){
+		$('.p900').removeClass('delete');
+	}else{
+		$('.p900').addClass('delete');
+	}
+});
+
+$('#p1000').click(function() {
+	if (this.checked){
+		$('.p1000').removeClass('delete');
+	}else{
+		$('.p1000').addClass('delete');
+	}
+});
+
+$('#p1100').click(function() {
+	if (this.checked){
+		$('.p1100').removeClass('delete');
+	}else{
+		$('.p1100').addClass('delete');
+	}
+});
+
+$('#p1300').click(function() {
+	if (this.checked){
+		$('.p1300').removeClass('delete');
+	}else{
+		$('.p1300').addClass('delete');
+	}
+});
+
+$('#p1500').click(function() {
+	if (this.checked){
+		$('.p1500').removeClass('delete');
+	}else{
+		$('.p1500').addClass('delete');
+	}
+});
+
+$('#p1600').click(function() {
+	if (this.checked){
+		$('.p1600').removeClass('delete');
+	}else{
+		$('.p1600').addClass('delete');
+	}
+});
+
+$('#p1700').click(function() {
+	if (this.checked){
+		$('.p1700').removeClass('delete');
+	}else{
+		$('.p1700').addClass('delete');
+	}
+});
+
+$('#p1800').click(function() {
+	if (this.checked){
+		$('.p1800').removeClass('delete');
+	}else{
+		$('.p1800').addClass('delete');
+	}
+});
+
+$('#p1900').click(function() {
+	if (this.checked){
+		$('.p1900').removeClass('delete');
+	}else{
+		$('.p1900').addClass('delete');
+	}
+});
+
+$('#p2000').click(function() {
+	if (this.checked){
+		$('.p2000').removeClass('delete');
+	}else{
+		$('.p2000').addClass('delete');
+	}
+});
+
+$('#p2100').click(function() {
+	if (this.checked){
+		$('.p2100').removeClass('delete');
+	}else{
+		$('.p2100').addClass('delete');
+	}
+});
+
+$('#p2200').click(function() {
+	if (this.checked){
+		$('.p2200').removeClass('delete');
+	}else{
+		$('.p2200').addClass('delete');
+	}
+});
+
+$('#p2300').click(function() {
+	if (this.checked){
+		$('.p2300').removeClass('delete');
+	}else{
+		$('.p2300').addClass('delete');
+	}
+});
+
+$('#p2400').click(function() {
+	if (this.checked){
+		$('.p2400').removeClass('delete');
+	}else{
+		$('.p2400').addClass('delete');
+	}
+});
+
+$('#p2500').click(function() {
+	if (this.checked){
+		$('.p2500').removeClass('delete');
+	}else{
+		$('.p2500').addClass('delete');
+	}
+});
+
+$('#p2600').click(function() {
+	if (this.checked){
+		$('.p2600').removeClass('delete');
+	}else{
+		$('.p2600').addClass('delete');
+	}
+});
+
+$('#p3000').click(function() {
+	if (this.checked){
+		$('.p3000').removeClass('delete');
+	}else{
+		$('.p3000').addClass('delete');
+	}
+});
+
+$('#p3100').click(function() {
+	if (this.checked){
+		$('.p3100').removeClass('delete');
+	}else{
+		$('.p3100').addClass('delete');
+	}
+});
+
+$('#p3300').click(function() {
+	if (this.checked){
+		$('.p3300').removeClass('delete');
+	}else{
+		$('.p3300').addClass('delete');
+	}
+});
+
+ $('li[data-toggle="tooltip"]').tooltip({
+    animated: 'fade',
+    placement: 'right',
+    html: true
+ });
 
 
   </script>

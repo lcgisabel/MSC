@@ -592,7 +592,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .navbar .navbar-nav>a.btn.btn-icon.btn-lg .far,
 .navbar .navbar-nav>a.btn.btn-icon.btn-lg .fas,
 .navbar .navbar-nav>a.btn.btn-icon.btn-lg .nc-icon {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .btn.btn-icon:not(.btn-footer) .nc-icon,
@@ -613,7 +613,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 
 .btn.btn-icon.btn-neutral,
 .navbar .navbar-nav>a.btn.btn-icon.btn-neutral {
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .btn:not(.btn-icon) .nc-icon,
@@ -1788,7 +1788,7 @@ fieldset[disabled] .btn-link.active {
   border-radius: 4px;
   color: #66615b;
   line-height: normal;
-  font-size: 14px;
+  font-size: 10px;
   -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -1854,7 +1854,7 @@ fieldset[disabled] .btn-link.active {
 
 .form-control+.form-control-feedback {
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 10px;
   margin-top: -7px;
   position: absolute;
   right: 10px;
@@ -2319,34 +2319,34 @@ a:focus {
 
 h1,
 .h1 {
-  font-size: 3.5em;
+  font-size: 2em;
   line-height: 1.15;
   margin-bottom: 30px;
 }
 
 h1 small,
 .h1 small {
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   opacity: .8;
 }
 
 h2,
 .h2 {
-  font-size: 2.5em;
+  font-size: 1.6em;
   margin-bottom: 30px;
 }
 
 h3,
 .h3 {
-  font-size: 2em;
+  font-size: 1.4em;
   margin-bottom: 30px;
   line-height: 1.4em;
 }
 
 h4,
 .h4 {
-  font-size: 1.714em;
+  font-size: 1.2em;
   line-height: 1.45em;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -2361,20 +2361,20 @@ h4.title+.category,
 
 h5,
 .h5 {
-  font-size: 1.57em;
+  font-size: 1em;
   line-height: 1.4em;
   margin-bottom: 15px;
 }
 
 h6,
 .h6 {
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 p.description {
-  font-size: 1.14em;
+  font-size: 0.9em;
 }
 
 .title {
@@ -2411,7 +2411,7 @@ p.description {
 }
 
 .card-category {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .text-primary,
@@ -2454,13 +2454,13 @@ a.text-gray:hover {
   border-left: none;
   border: 1px solid #66615B;
   padding: 20px;
-  font-size: 1.1em;
+  font-size: 0.8em;
   line-height: 1.8;
 }
 
 .blockquote small {
   color: #66615B;
-  font-size: 8px;
+  font-size: 7px;
   text-transform: uppercase;
 }
 
@@ -2493,7 +2493,7 @@ a.text-gray:hover {
 
 body {
   color: #2c2c2c;
-  font-size: 14px;
+  font-size: 10px;
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -2813,7 +2813,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   min-height: 53px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .navbar a {
@@ -2903,7 +2903,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   display: inline-block;
   margin: 0;
   line-height: 1.8em;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 400;
 }
 
@@ -2963,7 +2963,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .navbar .navbar-nav .nav-link {
   text-transform: uppercase;
-  font-size: 0.7142em;
+  font-size: 0.5em;
   padding: 0.5rem 0.7rem;
   line-height: 1.625rem;
   margin-right: 3px;
@@ -2976,7 +2976,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .navbar .navbar-nav .nav-link i.fa,
 .navbar .navbar-nav .nav-link i.nc-icon {
-  font-size: 18px;
+  font-size: 14px;
   position: relative;
   top: 3px;
   text-align: center;
@@ -2985,7 +2985,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .navbar .navbar-nav .nav-link i.nc-icon {
   top: 4px;
-  font-size: 16px;
+  font-size: 6px;
 }
 
 .navbar .navbar-nav .nav-link.profile-photo .profile-photo-small {
@@ -3017,7 +3017,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .navbar .navbar-brand {
   text-transform: capitalize;
-  font-size: 20px;
+  font-size: 12px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   line-height: 1.625rem;
@@ -4799,7 +4799,7 @@ License - nucleoapp.com/license/
 .sidebar .logo p,
 .off-canvas-sidebar .logo p {
   float: left;
-  font-size: 20px;
+  font-size: 14px;
   margin: 10px 10px;
   color: #FFFFFF;
   line-height: 20px;
@@ -5737,7 +5737,7 @@ License - nucleoapp.com/license/
 
 .card-stats .card-body .numbers .card-category {
   color: #9A9A9A;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.4em;
 }
 
@@ -5771,7 +5771,7 @@ License - nucleoapp.com/license/
     padding-top: 0;
   }
   .navbar .navbar-brand {
-    font-size: 16px;
+    font-size: 12px;
     margin-right: 0;
   }
   .profile-photo .profile-photo-small {
@@ -6414,10 +6414,10 @@ License - nucleoapp.com/license/
     text-align: center;
   }
   .section-nucleo-icons .icons-container i {
-    font-size: 30px;
+    font-size: 20px;
   }
   .section-nucleo-icons .icons-container i:nth-child(6) {
-    font-size: 48px;
+    font-size: 30px;
   }
   .page-header .container h6.category-absolute {
     width: 90%;
