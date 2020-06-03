@@ -22,8 +22,6 @@
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
   <!-- Tooltip -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -351,17 +349,26 @@ h1{
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-8">
+					<img src="" class="img-fluid" />
+				</div>
+				<div class="col-md-4">
+					<p><b>Hemisfério:</b> <label id="hemisferioModal"></label></p>
+					<p><b>Banda:</b> <label id="bandaModal"></label></p>
+					<p><b>Profundidade:</b> <label id="profundidadeModal"></label></p>
+				</div>
+			</div>
+		</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Fechar</button>
       </div>
     </div>
   </div>
@@ -822,35 +829,35 @@ h1{
 				<ul class="gpItem">	
 				  <li class="item fina esquerdo post p500 m4x8 ce1 modalCanal" data-toggle="tooltip" data-html="true"
 				  title="<h6>Canal 1</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 500µm">
-					<img class="img-fluid" src="img/response_map.jpg">
+					<img class="img-fluid" src="img/response_map.jpg" canal="Canal 1" profundidade="500µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>			
-				  <li class="item fina esquerdo post p2100 m4x8" data-toggle="tooltip" data-html="true" 
+				  <li class="item fina esquerdo post p2100 m4x8 modalCanal" data-toggle="tooltip" data-html="true" 
 				  title="<h6>Canal 2</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2100µm">
-				  <img class="img-fluid" src="img/response_map.jpg">
+				  <img class="img-fluid" src="img/response_map.jpg" canal="Canal 2" profundidade="2100µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>
-				  <li class="item fina esquerdo post p2400 m4x8" data-toggle="tooltip" data-html="true" 
+				  <li class="item fina esquerdo post p2400 m4x8 modalCanal" data-toggle="tooltip" data-html="true" 
 				  title="<h6>Canal 3</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2400µm">
-				  <img class="img-fluid" src="img/response_map.jpg">
+				  <img class="img-fluid" src="img/response_map.jpg" canal="Canal 3" profundidade="2400µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>
-				  <li class="item fina esquerdo post p1300 m4x8" data-toggle="tooltip" data-html="true" 
+				  <li class="item fina esquerdo post p1300 m4x8 modalCanal" data-toggle="tooltip" data-html="true" 
 				  title="<h6>Canal 4</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1300µm">
-				  <img class="img-fluid" src="img/response_map.jpg">
+				  <img class="img-fluid" src="img/response_map.jpg" canal="Canal 4" profundidade="1300µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>		
-				  <li class="item fina esquerdo post p2300 m4x8" data-toggle="tooltip" data-html="true" 
+				  <li class="item fina esquerdo post p2300 m4x8 modalCanal" data-toggle="tooltip" data-html="true" 
 				  title="<h6>Canal 5</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2300µm">
-				  <img class="img-fluid" src="img/response_map.jpg">
+				  <img class="img-fluid" src="img/response_map.jpg" canal="Canal 5" profundidade="2300µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>
-				  <li class="item fina esquerdo post p1500 m4x8" data-toggle="tooltip" data-html="true" 
+				  <li class="item fina esquerdo post p1500 m4x8 modalCanal" data-toggle="tooltip" data-html="true" 
 				  title="<h6>Canal 6</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1500µm">
-				  <img class="img-fluid" src="img/response_map.jpg">
+				  <img class="img-fluid" src="img/response_map.jpg" canal="Canal 6" profundidade="1500µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>			
-				  <li class="item fina esquerdo post p1700 m4x8" data-toggle="tooltip" data-html="true" 
+				  <li class="item fina esquerdo post p1700 m4x8 modalCanal" data-toggle="tooltip" data-html="true" 
 				  title="<h6>Canal 7</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 1700µm">
-				  <img class="img-fluid" src="img/response_map.jpg">
+				  <img class="img-fluid" src="img/response_map.jpg" canal="Canal 7" profundidade="1700µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>
-				  <li class="item fina esquerdo post p2000 m4x8" data-toggle="tooltip" data-html="true" 
+				  <li class="item fina esquerdo post p2000 m4x8 modalCanal" data-toggle="tooltip" data-html="true" 
 				  title="<h6>Canal 8</h6> <b>Hemisfério:</b> Esquerdo <br/> <b>Banda:</b> Fina <br/> <b>Profundidade:</b> 2000µm">
-				  <img class="img-fluid" src="img/response_map.jpg">
+				  <img class="img-fluid" src="img/response_map.jpg" canal="Canal 8" profundidade="2000µm" banda="Fina" hemisferio="Esquerdo">
 				  </li>					  
 				</ul>
 				</div>
@@ -1529,10 +1536,18 @@ h1{
 // item selection
 
 $(".modalCanal").click(function() {
-  //var url = $(this).find("img").attr("src");
- // $("#exampleModalLong img").attr("src", url);
+  var url = $(this).find("img").attr("src");
+   $("#exampleModalLong img").attr("src", url);
+  var canal = $(this).find("img").attr("canal");
+   $("#exampleModalLongTitle").html(canal);
+     var hemisferio = $(this).find("img").attr("hemisferio");
+   $("#hemisferioModal").html(hemisferio);
+     var banda = $(this).find("img").attr("banda");
+   $("#bandaModal").html(banda);
+     var profundidade = $(this).find("img").attr("profundidade");
+   $("#profundidadeModal").html(profundidade);
+
   $("#exampleModalLong").modal("show");
-  console.log("teste");
 });
 
 
