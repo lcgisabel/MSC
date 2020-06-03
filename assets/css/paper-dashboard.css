@@ -3017,7 +3017,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .navbar .navbar-brand {
   text-transform: capitalize;
-  font-size: 12px;
+  font-size: 14px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   line-height: 1.625rem;
@@ -5771,7 +5771,7 @@ License - nucleoapp.com/license/
     padding-top: 0;
   }
   .navbar .navbar-brand {
-    font-size: 12px;
+    font-size: 14px;
     margin-right: 0;
   }
   .profile-photo .profile-photo-small {
